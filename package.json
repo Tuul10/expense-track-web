@@ -4,13 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon -r @babel/register index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "create-next-app": "^14.2.13",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
     "gitignore": "^0.7.0",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/node": "^7.25.0",
+    "@babel/preset-env": "^7.25.4"
   }
 }
