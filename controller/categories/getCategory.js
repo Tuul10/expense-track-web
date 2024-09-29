@@ -1,4 +1,4 @@
-import { sql } from "../../database";
+import { sql } from "../../database/index";
 
 export const getCategory = async (_request, response) => {
   try {
@@ -9,3 +9,4 @@ export const getCategory = async (_request, response) => {
     response.status(400).json({ error: error });
   }
 };
+
