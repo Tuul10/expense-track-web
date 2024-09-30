@@ -1,16 +1,21 @@
 import { sql } from "../../database";
 
-export const postCategory = async (request, response) => {
+export const postRecord = async (request, response) => {
   try {
-    const { category_name, description, category_image } = request.body;
+    const {
+      userid,
+      record_name,
+      amount,
+      transaction_type,
+      description,
+      gategoryid,
+    } = request.body;
 
-    const createCategory =
-      await sql`SELECT userid, category_name, amount, transaction_type, description, currency_type, categoryid
-FROM records
-INNER JOIN categories ON records.categoryid = categories.categoryid;
-INNER JOIN users on records.userid = useres.userid`;
+    const createRecord =
+      await sql`INSERT INTO records (userid, record_name, amount, transaction_type, description, categoryid)
+                VALUES (${userid}, ${record_name}, ${amount}, ${transaction_type}, ${description},  ${gategoryid})`;
 
-    response.status(200).json({ categories: createCategory });
+    response.status(200).json({ records: createRecord });
   } catch (error) {
     response.status(400).json({ error: error });
   }
