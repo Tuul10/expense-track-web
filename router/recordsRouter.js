@@ -7,4 +7,4 @@ export const recordsRouter = express.Router();
 
 recordsRouter.get("/", getRecord);
 recordsRouter.post("/", postRecord);
-recordsRouter.delete("/delete", deleteRecord);
+recordsRouter.delete("/:id", deleteRecord);
