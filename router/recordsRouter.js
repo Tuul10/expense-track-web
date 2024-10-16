@@ -4,10 +4,12 @@ import { postRecord } from "../controller/records/postRecord";
 import { deleteRecord } from "../controller/records/deleteRecord";
 import { getRecord } from "../controller/records/getRecord";
 import { getRecordById2 } from "../controller/records/getRecordById2";
+import { getUserByid } from "../controller/records/getUserById";
 
 export const recordsRouter = express.Router();
 
 recordsRouter.get("/:id", getRecordById);
+recordsRouter.get("/user/:id", getUserByid);
 recordsRouter.get("/record/:id", getRecordById2);
 recordsRouter.get("/", getRecord);
 recordsRouter.post("/postRecord", postRecord);

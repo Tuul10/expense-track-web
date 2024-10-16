@@ -1,11 +1,11 @@
 import { sql } from "../../database/index";
 
-export const getRecordById = async (request, response) => {
+export const getUserByid = async (request, response) => {
   try {
     const { id } = request.params;
     const records = await sql`SELECT * FROM records
                               INNER JOIN categories ON records.categoryid = categories.categoryid
-                              WHERE records.categoryid = ${id}
+                              WHERE userid = ${id}
                               `;
 
     response.status(200).json({ records: records });

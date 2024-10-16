@@ -11,4 +11,4 @@ userRouter.get("/", getUser);
 userRouter.post("/", postUser);
 userRouter.put("/:id", updateUser);
 userRouter.delete("/:id", deleteUser);
-userRouter.post("/signin", signIn)
+userRouter.post("/signin", signIn);
